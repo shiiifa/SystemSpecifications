@@ -15,7 +15,7 @@ public class GUI extends JFrame{
 
         this.getContentPane().setBackground(Color.pink); //Changed background color to pink
 
-        ImageIcon logo = new ImageIcon("/Users/hediafrimpong/Downloads/logic.jpeg"); // creates an image icon
+        ImageIcon logo = new ImageIcon("logic.jpeg"); // creates an image icon // image cannot be loaded for some reason but i'll find out why.
         if (logo.getImageLoadStatus() == java.awt.MediaTracker.ERRORED) {
             System.out.println("Image could not be loaded.");
         }
@@ -26,7 +26,7 @@ public class GUI extends JFrame{
 
         //New label
         JLabel label = new JLabel();
-        label.setText("Welcome User To System-Specifications-to-Logic Translator");
+        label.setText("Welcome To Your System-Specifications-to-Logic Translator");
         label.setIcon(currentLogo);
         label.setHorizontalTextPosition(JLabel.CENTER);
         label.setVerticalTextPosition(JLabel.BOTTOM);
