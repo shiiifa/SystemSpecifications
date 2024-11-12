@@ -26,7 +26,7 @@ public class GUI extends JFrame{
 
         //New label
         JLabel label = new JLabel();
-        label.setText("STARTER UP");
+        label.setText("Welcome User To System-Specifications-to-Logic Translator");
         label.setIcon(currentLogo);
         label.setHorizontalTextPosition(JLabel.CENTER);
         label.setVerticalTextPosition(JLabel.BOTTOM);
