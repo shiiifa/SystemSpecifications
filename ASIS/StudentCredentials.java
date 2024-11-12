@@ -1,6 +1,8 @@
 package ASIS;
 
 public class StudentCredentials {
-    //This class will contain student info, such as
-    // their name, major, year and possibly email
+    private String courseID;
+    private String courseName;
+    private boolean isCourseMet;
+
 }
