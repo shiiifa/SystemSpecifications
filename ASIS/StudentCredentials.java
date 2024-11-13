@@ -47,4 +47,8 @@ public class StudentCredentials {
         return studentID;
     }
 
+    public String getStudentEmail(){
+        return studentEmail;
+    }
+
 }
