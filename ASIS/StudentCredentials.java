@@ -2,7 +2,7 @@ package ASIS;
 
 import java.util.Objects;
 
-public class StudentCredentials {
+public class StudentCredentials implements getStudentInfo {
     private String studentFirstName;
     private String studentMidName;
     private String studentSurname;

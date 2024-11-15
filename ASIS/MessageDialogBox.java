@@ -6,3 +6,4 @@ public class MessageDialogBox {
     // selection should be approved by the manufacturer or not.
     // The logic statement generated should show the manufacturer whether to click "approve" or "disapprove"
 }
+
