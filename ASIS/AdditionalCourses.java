@@ -2,7 +2,8 @@ package ASIS;
 
 import java.util.Objects;
 
-public class Course {
+public class AdditionalCourses implements getCourseInfo {
+
     private String courseID;
     private String courseName;
     private boolean isCourseMet;
@@ -13,11 +14,9 @@ public class Course {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o)
-            return true;
-        if (o == null || getClass() != o.getClass())
-            return false;
-        Course that = (Course) o;
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AdditionalCourses that = (AdditionalCourses) o;
         return isCourseMet == that.isCourseMet && Objects.equals(courseID, that.courseID) && Objects.equals(courseName, that.courseName);
     }
 
@@ -49,6 +48,8 @@ public class Course {
         isCourseMet = courseMet;
     }
 
-
-
+    //This class is for students who want to take additional courses
+    //There should be a condition here.
+    // If the person's GPA is not within a particular threshold,
+    // they can't take the course. Also, the number of credits should not exceed 5.5
 }
