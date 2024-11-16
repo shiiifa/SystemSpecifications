@@ -7,7 +7,7 @@ public class GUI extends JFrame{
     public GUI(){
 
 
-        this.setTitle("System Specifications To Logic Translator");// sets the title of the window
+        this.setTitle("Name of our software");// sets the title of the window
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // This sets the exit on the this to quit the application.
         this.setSize(750, 750);// sets x and y dimensions
 
@@ -28,10 +28,11 @@ public class GUI extends JFrame{
         JLabel label = new JLabel();
         label.setText("Welcome To Your System-Specifications-to-Logic Translator");
         label.setIcon(currentLogo);
-        label.setHorizontalTextPosition(JLabel.CENTER);
-        label.setVerticalTextPosition(JLabel.BOTTOM);
-        label.setForeground(Color.white);
-        label.setFont(new Font("MV Boli", Font.PLAIN, 18));
+        label.setHorizontalTextPosition(JLabel.RIGHT);
+        label.setVerticalTextPosition(JLabel.CENTER);
+        label.setForeground(Color.white); // font color
+        label.setFont(new Font("MV Boli", Font.PLAIN, 18));// font size
+
 
         this.add(label);
         this.setLayout(new FlowLayout());
