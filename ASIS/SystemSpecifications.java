@@ -13,8 +13,6 @@ public class SystemSpecifications {
     // Implies - →
     // If and only if - ↔
 
-
-
     //THIS CODE IS INCOMPLETE
     /**
      * Generates an English sentence based on the student's information.
@@ -22,6 +20,7 @@ public class SystemSpecifications {
      * @param yearGroup The student's year group.
      * @return The corresponding English sentence.
      */
+
     public static String generateEnglishSentence(String studentID, String yearGroup) {
         // Check if the student ID ends with the specified year group
         if (studentID.endsWith(yearGroup)) {
@@ -52,6 +51,7 @@ public class SystemSpecifications {
      * @param expression The logical expression to validate.
      * @return true if the expression is valid; false otherwise.
      */
+
     public static boolean isValidLogicExpression(String expression) {
         // Remove all whitespaces for easier validation
         expression = expression.replaceAll("\\s+", "");
