@@ -5,7 +5,7 @@ public class Retake implements getStudentInfo, getCourseInfo {
     // Fields for storing course and student information
     private String studentID;
     private String courseID;
-    private boolean prerequisitesMet;
+    private boolean prerequisitesMet; //how do we check for whether or not a prerequisite is met?
 
     // Constructor to initialize the Retake object
     public Retake(String studentID, String courseID, boolean prerequisitesMet) {

@@ -6,6 +6,9 @@ public class Course {
     private String courseID;
     private String courseName;
     private boolean isCourseMet;
+    private int numberOfSemesterCourses;
+
+
 
     public String getCourseID() {
         return courseID;
@@ -24,8 +27,8 @@ public class Course {
     @Override
     public int hashCode() {
         int result = 9;
-        result = 33*result+(surname==null?0:surname.hashCode());
-        result=33*result+age;
+        result = 33*result+(courseName==null?0:courseName.hashCode());
+        result=33*result+numberOfSemesterCourses;
         return result;
     }
 
