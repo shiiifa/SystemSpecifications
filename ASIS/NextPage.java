@@ -29,67 +29,67 @@ public class NextPage implements ActionListener {
 
         //Student's name
         JLabel year = new JLabel();
-        year.setText("Year (1,2,3,4 or 5 for additional courses): ");
+        year.setText("Year (1,2,3,4 or 5): ");
         year.setForeground(Color.BLACK);
-        year.setFont(new Font("MV Boli", Font.PLAIN,12));
+        year.setFont(new Font("Georgia bold", Font.PLAIN,12));
         year.setBounds(15,10,300,35);
         newPanel.add(year);
 
         yearInput = new JTextField();
         yearInput.setBounds(5,30,400,50);
-        yearInput.setFont(new Font("MV Boli", Font.ITALIC, 14));
+        yearInput.setFont(new Font("Georgia bold", Font.ITALIC, 14));
         newPanel.add(yearInput);
 
         //Student's ID
         JLabel iD = new JLabel();
-        iD.setText("ID (8 digits): ");
+        iD.setText("Student ID: ");
         iD.setForeground(Color.BLACK);
-        iD.setFont(new Font("MV Boli", Font.PLAIN,12));
+        iD.setFont(new Font("Georgia bold", Font.PLAIN,12));
         iD.setBounds(15,80,150,35);
         newPanel.add(iD);
 
         iDInput = new JTextField();
         iDInput.setBounds(5,100,400,50);
-        iDInput.setFont(new Font("MV Boli", Font.ITALIC, 14));
+        iDInput.setFont(new Font("Georgia bold", Font.ITALIC, 14));
         newPanel.add(iDInput);
 
         //Student's GPA
         JLabel gpa = new JLabel();
         gpa.setText("CGPA: ");
         gpa.setForeground(Color.BLACK);
-        gpa.setFont(new Font("MV Boli", Font.PLAIN,12));
+        gpa.setFont(new Font("Georgia bold", Font.PLAIN,12));
         gpa.setBounds(15,150,150,35);
         newPanel.add(gpa);
 
         gpaInput = new JTextField();
         gpaInput.setBounds(5,170,400,50);
-        gpaInput.setFont(new Font("MV Boli", Font.ITALIC, 14));
+        gpaInput.setFont(new Font("Georgia bold", Font.ITALIC, 14));
         newPanel.add(gpaInput);
 
         //Student's major
         JLabel major = new JLabel();
         major.setText("Major: ");
         major.setForeground(Color.BLACK);
-        major.setFont(new Font("MV Boli", Font.PLAIN,12));
+        major.setFont(new Font("Georgia bold", Font.PLAIN,12));
         major.setBounds(15,220,150,35);
         newPanel.add(major);
 
         majorInput = new JTextField();
         majorInput.setBounds(5,240,400,50);
-        majorInput.setFont(new Font("MV Boli", Font.ITALIC, 14));
+        majorInput.setFont(new Font("Georgia bold", Font.ITALIC, 14));
         newPanel.add(majorInput);
 
         //Student's grade
         JLabel grade = new JLabel();
-        grade.setText("Grade for Prerequisite (A,B,etc): ");
+        grade.setText("Grade for Prerequisite (A,B,C, etc): ");
         grade.setForeground(Color.BLACK);
-        grade.setFont(new Font("MV Boli", Font.PLAIN,12));
+        grade.setFont(new Font("Georgia bold", Font.PLAIN,12));
         grade.setBounds(15,290,300,35);
         newPanel.add(grade);
 
         gradeInput = new JTextField();
         gradeInput.setBounds(5,310,400,50);
-        gradeInput.setFont(new Font("MV Boli", Font.ITALIC, 14));
+        gradeInput.setFont(new Font("Georgia bold", Font.ITALIC, 14));
         newPanel.add(gradeInput);
 
         doneButton = new JButton("Done");
@@ -100,7 +100,7 @@ public class NextPage implements ActionListener {
         JLabel courses = new JLabel();
         courses.setText("Available courses: ");
         courses.setForeground(Color.BLACK);
-        courses.setFont(new Font("MV Boli", Font.PLAIN,12));
+        courses.setFont(new Font("Georgia bold", Font.PLAIN,12));
         courses.setBounds(15,410,150,35);
         newPanel.add(courses);
 
@@ -139,7 +139,7 @@ public class NextPage implements ActionListener {
                 JPanel editedPanel = errorPage.getNewPanel();
                 JLabel caution = new JLabel();
                 caution.setText("* Ensure all fields are written correctly");
-                caution.setFont(new Font("MV Boli", Font.BOLD,12));
+                caution.setFont(new Font("Georgia bold", Font.BOLD,12));
                 caution.setBounds(15,360,300,35);
 
                 editedPanel.add(caution);
@@ -192,12 +192,13 @@ public class NextPage implements ActionListener {
                     System.out.println("You selected: " + selectedItem);
                 });
 
+
                 newPanel.revalidate();
                 newPanel.repaint();
             }
 
             else if(year == 4){
-                //Display list of courses ** Edit this
+                //Display list of courses
                 List<String> year4 = new CourseSelectionPanel().getYear4Courses();
 //
                 JComboBox<String> coursesMenu = new JComboBox<>(year4.toArray(new String[0]));
@@ -214,7 +215,7 @@ public class NextPage implements ActionListener {
             }
 
             else if(year == 5){
-                //Display list of courses ** Edit this
+                //Display list of courses
                 List<String> additionalCourses = new CourseSelectionPanel().getAdditionalCourses();
 //
                 JComboBox<String> coursesMenu = new JComboBox<>(additionalCourses.toArray(new String[0]));

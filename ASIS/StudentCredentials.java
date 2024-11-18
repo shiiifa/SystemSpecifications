@@ -8,6 +8,7 @@ public class StudentCredentials implements getStudentInfo {
     private String studentSurname;
     private int studentID;
     private String studentEmail;
+
     //Should student have a password too?
 
     //For students with middle names

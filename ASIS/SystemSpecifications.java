@@ -21,6 +21,7 @@ public class SystemSpecifications {
      * @return The corresponding English sentence.
      */
 
+
     public static String generateEnglishSentence(String studentID, String yearGroup) {
         // Check if the student ID ends with the specified year group
         if (studentID.endsWith(yearGroup)) {
@@ -46,6 +47,7 @@ public class SystemSpecifications {
         return logic;
     }
 
+
     /**
      * Validates a logical expression to ensure it adheres to propositional syntax rules.
      * @param expression The logical expression to validate.
@@ -62,11 +64,11 @@ public class SystemSpecifications {
             return false;
         }
 
+
         // Ensure the expression does not start or end with operators (except ¬ at the start)
         if (expression.matches("^[∧∨→↔].*") || expression.matches(".*[∧∨→↔]$")) {
             return false;
         }
-
         return true;
     }
 }

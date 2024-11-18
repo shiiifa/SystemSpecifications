@@ -16,9 +16,9 @@ public class LoginPanel implements ActionListener {
         ImageIcon icon = new ImageIcon("Ashesi logo.png"); // creates an image icon
 
         JLabel mainText = new JLabel();
-        mainText.setText("WELCOME");
+        mainText.setText("WELCOME!");
         mainText.setForeground(Color.black); // font color
-        mainText.setFont(new Font("MV Boli", Font.BOLD, 16));
+        mainText.setFont(new Font("Georgia", Font.BOLD, 16));
         mainText.setIcon(icon);
         mainText.setVerticalAlignment(JLabel.TOP);
         mainText.setHorizontalAlignment(JLabel.CENTER);
@@ -27,9 +27,9 @@ public class LoginPanel implements ActionListener {
         mainText.setIconTextGap(2);
 
         JLabel secondLabel = new JLabel();
-        secondLabel.setText("Login to ..."); //change name
+        secondLabel.setText("STUDENT LOGIN"); //change name
         secondLabel.setForeground(Color.BLACK);
-        secondLabel.setFont(new Font("MV Boli", Font.PLAIN,16));
+        secondLabel.setFont(new Font("Georgia", Font.PLAIN,16));
         secondLabel.setHorizontalAlignment(JLabel.CENTER);
         secondLabel.setBounds(150, 150, 150, 50);
 
@@ -41,14 +41,14 @@ public class LoginPanel implements ActionListener {
 
         //Adding a text field for Username/ID
         JLabel userLabel = new JLabel();
-        userLabel.setText("Username/ID");
+        userLabel.setText("Username");
         userLabel.setForeground(Color.BLACK);
-        userLabel.setFont(new Font("MV Boli", Font.PLAIN,11));
+        userLabel.setFont(new Font("Georgia", Font.PLAIN,11));
         userLabel.setBounds(75, 220, 150,50);
 
         usernameInput = new JTextField();
         usernameInput.setBounds(75, 250, 300, 50);
-        usernameInput.setFont(new Font("MV Boli", Font.ITALIC, 12));
+        usernameInput.setFont(new Font("Georgia", Font.ITALIC, 12));
 
         //Button for submitting username/ID
         submit = new JButton("Login");
@@ -83,7 +83,7 @@ public class LoginPanel implements ActionListener {
             String user = usernameInput.getText();
             //perform some action - maybe checks if it is valid
             //if user == yada yada- open new window, else display(wrong user name please type again).
-            System.out.println("UserName: " + user);
+            System.out.println("Username: " + user);
             myFrame.dispose();
             new NextPage();
         }

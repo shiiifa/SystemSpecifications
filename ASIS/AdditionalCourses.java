@@ -8,7 +8,7 @@ public class AdditionalCourses implements getCourseInfo {
     private String courseName;
     private boolean isCourseMet;
     private int numberOfCreditHours;
-    public double threshold=3.3;
+    public double threshold = 3.3;
     public double gradePointAverage;
 
     public String getCourseID() {
