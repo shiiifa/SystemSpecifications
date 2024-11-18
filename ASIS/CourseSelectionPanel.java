@@ -61,53 +61,75 @@ public class CourseSelectionPanel {
         year1Courses.add("SOAN111: Leadership Seminar I: What Makes a Good Leader?");
         year1Courses.add("CS 111: Introduction to Computing");
         year1Courses.add("MATH142: Calculus 1/Pre-calculus 1");
-        year1Courses.add("ENGL113: Text and Meaning ");
+        year1Courses.add("ENGL113: Text and Meaning");
+        year1Courses.add("AS111: Ashesi Success");
         year1Courses.add("CS000: Computer Programming for CS");
-        year1Courses.add("MATH000: Applied Calculus ");
+        year1Courses.add("MATH000: Applied Calculus");
+        year1Courses.add("Calculus for Engineering");
+        year1Courses.add("BUSA161A: Foundation of Design & Entrepreneurship I");
+        year1Courses.add("SOAN111: Leadership Seminar I");
+        year1Courses.add("BUSA161B: Foundation of Design & Entrepreneurship II");
+        year1Courses.add("Physics: Mechanics");
 
 
-        year2Courses.add("SOAN234: African Music and the Art Music Scen");
+
+        year2Courses.add("SOAN234: African Music and the Art Music Scene");
         year2Courses.add("MATH000: Principles of Economics");
         year2Courses.add("CS212: Computer Programming for CS");
         year2Courses.add("CS221: Discrete Structures and Theory");
-        year2Courses.add("STAT151: Statistics with Probability ");
+        year2Courses.add("STAT151: Statistics with Probability");
         year2Courses.add("SOAN211: Leadership Seminar 2");
-        year2Courses.add("CS221: Discrete Structures & Theory ");
         year2Courses.add("CS213: Object Oriented Programming");
         year2Courses.add("MATH000: Linear Algebra");
         year2Courses.add("SOAN311: Leadership Seminar 3");
         year2Courses.add("CS000: Data Structures & Algorithms");
         year2Courses.add("CS001: Database Systems");
         year2Courses.add("CS002: Introduction to Artificial Intelligence");
+        year2Courses.add("Physics: Electromagnetism");
+        year2Courses.add("Discrete Math");
+        year2Courses.add("Statistics for Engineering");
+        year2Courses.add("Circuits and Electronics");
+        year2Courses.add("Applied Programming for Engineers");
+        year2Courses.add("Materials Science & Chemistry");
+        year2Courses.add("Differential Equations & Numerical Methods");
+
 
 
         year3Courses.add("CS000: Algorithm Design & Analysis");
         year3Courses.add("CS341: Web Technologies");
         year3Courses.add("ENGR311: System Dynamics");
-        year3Courses.add("EE32O: Signals and Systems");
-        year3Courses.add("CS001: Intermediate Computer Programming ");
+        year3Courses.add("EE320: Signals and Systems");
+        year3Courses.add("CS001: Intermediate Computer Programming");
         year3Courses.add("CS002: Systems Fundamentals");
         year3Courses.add("SOAN411: Leadership Seminar 4");
         year3Courses.add("SOAN325: Research Methods");
         year3Courses.add("CS003: Software Engineering");
-        year3Courses.add("CS004: Computer Organization & Architecture ");
+        year3Courses.add("CS004: Computer Organization & Architecture");
+        year3Courses.add("Instrumentation for Engineering");
+        year3Courses.add("Year 3 Group Project & Seminar");
+        year3Courses.add("Control Systems");
+        year3Courses.add("Data Structures & Algorithms");
+        year3Courses.add("Networks & Data Communications");
+        year3Courses.add("Digital Systems Design");
+
 
 
 
         year4Courses.add("CS462: Cloud Computing");
-        year4Courses.add("CS331: Computer Organization and Architecture");
         year4Courses.add("CS442: E-Commerce");
         year4Courses.add("CS432: Networks and Data Communication");
-        year4Courses.add("BUSA000: Finance for Non-Finance Managers ");
+        year4Courses.add("BUSA000: Finance for Non-Finance Managers");
         year4Courses.add("CE451: Embedded Systems");
         year4Courses.add("CS433: Operating Systems");
         year4Courses.add("CS452: Machine Learning");
         year4Courses.add("CS458: Internet of Things");
-        year4Courses.add("CS000: Computer Organization & Architecture");
         year4Courses.add("ENGR401: Engineering Capstone Seminar");
         year4Courses.add("IS451: Information and Systems Security");
         year4Courses.add("SOAN441: Leadership Seminar IV for Engineers: Leadership as Service");
         year4Courses.add("BUSA001: Thesis 2/Applied Project/Entrepreneurship");
+        year4Courses.add("Project Management and Professional Practice");
+        year4Courses.add("African Studies Elective");
+        year4Courses.add("Applied Project");
 
 
         additionalCourses.add("CS491: Undergraduate Thesis I (CS)");
