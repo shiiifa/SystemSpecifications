@@ -14,6 +14,7 @@ public class CourseSelectionPanel {
         return year1Courses;
     }
 
+
     public void setYear1Courses(ArrayList<String> year1Courses) {
         this.year1Courses = year1Courses;
     }
@@ -70,8 +71,6 @@ public class CourseSelectionPanel {
         year1Courses.add("SOAN111: Leadership Seminar I");
         year1Courses.add("BUSA161B: Foundation of Design & Entrepreneurship II");
         year1Courses.add("Physics: Mechanics");
-
-
 
         year2Courses.add("SOAN234: African Music and the Art Music Scene");
         year2Courses.add("MATH000: Principles of Economics");
@@ -134,12 +133,5 @@ public class CourseSelectionPanel {
         additionalCourses.add("Introductory French 1");
         additionalCourses.add("Introductory French 2");
 
-
-
-
-
-
-
     }
-
 }

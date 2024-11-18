@@ -81,7 +81,7 @@ public class LoginPanel implements ActionListener {
             if (!user.matches("[A-Za-z]+\\s+[A-Za-z]+")) {
                 JOptionPane.showMessageDialog(
                         null,
-                        "Invalid username. Please enter your full name (no numbers, special characters, or emojis).",
+                        "Invalid username. Please enter your full name",
                         "Invalid Input",
                         JOptionPane.ERROR_MESSAGE
                 );
