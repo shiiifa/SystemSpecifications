@@ -29,7 +29,7 @@ public class NextPage implements ActionListener {
 
         //Student's name
         JLabel year = new JLabel();
-        year.setText("Year (1,2,3,4 or 5): ");
+        year.setText("Year (1/2/3/4): ");
         year.setForeground(Color.BLACK);
         year.setFont(new Font("Georgia bold", Font.PLAIN,12));
         year.setBounds(15,10,300,35);
@@ -81,7 +81,7 @@ public class NextPage implements ActionListener {
 
         //Student's grade
         JLabel grade = new JLabel();
-        grade.setText("Grade for Prerequisite (A,B,C, etc): ");
+        grade.setText("Grade Obtained in Prerequisite Course (A/B/C/D/E): ");
         grade.setForeground(Color.BLACK);
         grade.setFont(new Font("Georgia bold", Font.PLAIN,12));
         grade.setBounds(15,290,300,35);
@@ -98,7 +98,7 @@ public class NextPage implements ActionListener {
         newPanel.add(doneButton);
 
         JLabel courses = new JLabel();
-        courses.setText("Available courses: ");
+        courses.setText("Select Course from List: ");
         courses.setForeground(Color.BLACK);
         courses.setFont(new Font("Georgia bold", Font.PLAIN,12));
         courses.setBounds(15,410,150,35);
