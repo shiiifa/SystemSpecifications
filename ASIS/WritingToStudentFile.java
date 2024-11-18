@@ -8,7 +8,7 @@ public class WritingToStudentFile {
     public WritingToStudentFile(String year, String id, String cgpa, String major, String grade){
         String fileName = "StudentFile.txt";
 
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName,true))) {
             writer.write(year);
             writer.newLine();
             writer.write(id);
@@ -18,8 +18,9 @@ public class WritingToStudentFile {
             writer.write(major);
             writer.newLine();
             writer.write(grade);
+            writer.newline();
 
-            System.out.println("File written successfully");
+            System.out.println("Data appended to file successfully");
         } catch (IOException e) {
             System.err.println("An error occurred: " + e.getMessage());
         }
