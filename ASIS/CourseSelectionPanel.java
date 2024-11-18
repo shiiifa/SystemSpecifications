@@ -59,6 +59,12 @@ public class CourseSelectionPanel {
         year1Courses.add("CS112: Computer Programming for Engineering");
         year1Courses.add("MATH211: Multivariable Calculus and Linear Algebra");
         year1Courses.add("SOAN111: Leadership Seminar I: What Makes a Good Leader?");
+        year1Courses.add("CS 111: Introduction to Computing");
+        year1Courses.add("MATH142: Calculus 1/Pre-calculus 1");
+        year1Courses.add("ENGL113: Text and Meaning ");
+        year1Courses.add("CS000: Computer Programming for CS");
+        year1Courses.add("MATH000: Applied Calculus ");
+
 
         year2Courses.add("SOAN234: African Music and the Art Music Scen");
         year2Courses.add("CS212: Computer Programming for CS");
