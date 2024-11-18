@@ -38,7 +38,6 @@ public class LoginPanel implements ActionListener {
         logPanel.setBounds(150, 150, 450, 500);
         logPanel.setLayout(null);
 
-
         //Adding a text field for Username/ID
         JLabel userLabel = new JLabel();
         userLabel.setText("Username");
@@ -55,22 +54,17 @@ public class LoginPanel implements ActionListener {
         submit.setBounds(75, 320, 250, 30);
         submit.addActionListener(this); //creating an action listener to do an action when this button is clicked
 
-
-
         int labelWidth = 150;  // Width of the label
         int labelHeight = 100; // Height of the label
         int panelWidth = logPanel.getWidth();  // Panel width
         int labelX = (panelWidth - labelWidth) / 2;  // Calculate X to center the label
         mainText.setBounds(labelX, 20, labelWidth, labelHeight);
 
-
-
         logPanel.add(mainText);
         logPanel.add(secondLabel);
         logPanel.add(userLabel);
         logPanel.add(usernameInput);
         logPanel.add(submit);
-
 
         myFrame.setLayout(null);
         myFrame.add(logPanel);
@@ -80,10 +74,21 @@ public class LoginPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource()==submit){
-            String user = usernameInput.getText();
-            //perform some action - maybe checks if it is valid
-            //if user == yada yada- open new window, else display(wrong user name please type again).
+        if (e.getSource() == submit) {
+            String user = usernameInput.getText().trim();
+
+            // Validation for full name
+            if (!user.matches("[A-Za-z]+\\s+[A-Za-z]+")) {
+                JOptionPane.showMessageDialog(
+                        null,
+                        "Invalid username. Please enter your full name (no numbers, special characters, or emojis).",
+                        "Invalid Input",
+                        JOptionPane.ERROR_MESSAGE
+                );
+                return; // Stop further execution if the input is invalid
+            }
+
+            // If valid, proceed
             System.out.println("Username: " + user);
             myFrame.dispose();
             new NextPage();
