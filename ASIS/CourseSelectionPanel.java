@@ -58,30 +58,31 @@ public class CourseSelectionPanel {
         year1Courses.add("");
 
 
-        year2Courses.add("");
-        year2Courses.add("");
-        year2Courses.add("");
+        year2Courses.add("SOAN234: African Music and the Art Music Scen");
+        year2Courses.add("CS212: Computer Programming for CS");
+        year2Courses.add("CS221: Discrete Structures and Theory");
         year2Courses.add("");
         year2Courses.add("");
         year2Courses.add("");
         year2Courses.add("");
 
 
-        year3Courses.add("");
-        year3Courses.add("");
-        year3Courses.add("");
-        year3Courses.add("");
+        year3Courses.add("SOAN322: African Cultural Institutions");
+        year3Courses.add("CS341: Web Technologies");
+        year3Courses.add("ENGR311: System Dynamics");
+        year3Courses.add("EE32O: Signals and Systems");
         year3Courses.add("");
         year3Courses.add("");
 
 
-        year4Courses.add("");
-        year4Courses.add("");
-        year4Courses.add("");
-
-        year4Courses.add("");
-
-        year4Courses.add("");
+        year4Courses.add("CS462: Cloud Computing");
+        year4Courses.add("CS331: Computer Organization and Architecture");
+        year4Courses.add("CS442: E-Commerce");
+        year4Courses.add("CS432: Networks and Data Communication");
+        year4Courses.add("CE451: Embedded Systems");
+        year4Courses.add("CS433: Operating Systems");
+        year4Courses.add("CS452: Machine Learning");
+        year4Courses.add("SOAN441: Leadership Seminar IV for Engineers: Leadership as Service");
 
 
 
