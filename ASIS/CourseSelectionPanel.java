@@ -51,12 +51,14 @@ public class CourseSelectionPanel {
     }
 
     public CourseSelectionPanel(){
-        year1Courses.add("");
-        year1Courses.add("");
-        year1Courses.add("");
-        year1Courses.add("");
-        year1Courses.add("");
-
+        year1Courses.add("ENGR112: Introduction to Engineering");
+        year1Courses.add("BUSA161: Foundations of Design and Entrepreneurship I");
+        year1Courses.add("ENGL112: Written and Oral Communication");
+        year1Courses.add("BUSA162: Foundations of Design and Entrepreneurship II");
+        year1Courses.add("MATH161: Engineering Calculus");
+        year1Courses.add("CS112: Computer Programming for Engineering");
+        year1Courses.add("MATH211: Multivariable Calculus and Linear Algebra");
+        year1Courses.add("SOAN111: Leadership Seminar I: What Makes a Good Leader?");
 
         year2Courses.add("SOAN234: African Music and the Art Music Scen");
         year2Courses.add("CS212: Computer Programming for CS");
@@ -82,12 +84,15 @@ public class CourseSelectionPanel {
         year4Courses.add("CE451: Embedded Systems");
         year4Courses.add("CS433: Operating Systems");
         year4Courses.add("CS452: Machine Learning");
+        year4Courses.add("CS458: Internet of Things");
+        year4Courses.add("ENGR401: Engineering Capstone Seminar");
+        year4Courses.add("IS451: Information and Systems Security");
         year4Courses.add("SOAN441: Leadership Seminar IV for Engineers: Leadership as Service");
 
 
 
-        additionalCourses.add("");
-        additionalCourses.add("");
+        additionalCourses.add("CS491: Undergraduate Thesis I (CS)");
+        additionalCourses.add("IS351: Systems Analysis and Design");
         additionalCourses.add("");
         additionalCourses.add("");
         additionalCourses.add("");
