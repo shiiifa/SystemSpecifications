@@ -85,13 +85,12 @@ public class CourseSelectionPanel {
         year2Courses.add("CS000: Data Structures & Algorithms");
         year2Courses.add("CS001: Database Systems");
         year2Courses.add("CS002: Introduction to Artificial Intelligence");
-        year2Courses.add("Physics: Electromagnetism");
-        year2Courses.add("Discrete Math");
-        year2Courses.add("Statistics for Engineering");
-        year2Courses.add("Circuits and Electronics");
-        year2Courses.add("Applied Programming for Engineers");
-        year2Courses.add("Materials Science & Chemistry");
-        year2Courses.add("Differential Equations & Numerical Methods");
+        year2Courses.add("SC113: Physics: Electromagnetism");
+        year2Courses.add("MATH152: Statistics for Engineering");
+        year2Courses.add("SC145: Circuits and Electronics");
+        year2Courses.add("CS204: Applied Programming for Engineers");
+        year2Courses.add("ME128: Materials Science & Chemistry");
+        year2Courses.add("MATH240: Differential Equations & Numerical Methods");
 
 
 
@@ -105,14 +104,12 @@ public class CourseSelectionPanel {
         year3Courses.add("SOAN325: Research Methods");
         year3Courses.add("CS003: Software Engineering");
         year3Courses.add("CS004: Computer Organization & Architecture");
-        year3Courses.add("Instrumentation for Engineering");
-        year3Courses.add("Year 3 Group Project & Seminar");
-        year3Courses.add("Control Systems");
-        year3Courses.add("Data Structures & Algorithms");
-        year3Courses.add("Networks & Data Communications");
-        year3Courses.add("Digital Systems Design");
-
-
+        year3Courses.add("ENG000: Instrumentation for Engineering");
+        year3Courses.add("ENG001: Year 3 Group Project & Seminar");
+        year3Courses.add("CS005: Control Systems");
+        year3Courses.add("CS006: Data Structures & Algorithms");
+        year3Courses.add("CS097: Networks & Data Communications");
+        year3Courses.add("CDS043: Digital Systems Design");
 
 
         year4Courses.add("CS462: Cloud Computing");
@@ -127,17 +124,15 @@ public class CourseSelectionPanel {
         year4Courses.add("IS451: Information and Systems Security");
         year4Courses.add("SOAN441: Leadership Seminar IV for Engineers: Leadership as Service");
         year4Courses.add("BUSA001: Thesis 2/Applied Project/Entrepreneurship");
-        year4Courses.add("Project Management and Professional Practice");
-        year4Courses.add("African Studies Elective");
-        year4Courses.add("Applied Project");
+        year4Courses.add("BUSA002: Project Management and Professional Practice");
+        year4Courses.add("SOAN000: African Studies Elective");
+        year4Courses.add("CSOOO: Applied Project");
 
 
-        additionalCourses.add("CS491: Undergraduate Thesis I (CS)");
-        additionalCourses.add("IS351: Systems Analysis and Design");
-        additionalCourses.add("");
-        additionalCourses.add("");
-        additionalCourses.add("");
-        additionalCourses.add("");
+        additionalCourses.add("Professional French 1 ");
+        additionalCourses.add("Professional French 2");
+        additionalCourses.add("Introductory French 1");
+        additionalCourses.add("Introductory French 2");
 
 
 
