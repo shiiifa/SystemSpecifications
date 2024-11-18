@@ -18,7 +18,7 @@ public class WritingToStudentFile {
             writer.write(major);
             writer.newLine();
             writer.write(grade);
-            writer.newline();
+            //writer.newline();
 
             System.out.println("Data appended to file successfully");
         } catch (IOException e) {
