@@ -71,6 +71,7 @@ public class LoginPanel implements ActionListener {
         logPanel.add(usernameInput);
         logPanel.add(submit);
 
+
         myFrame.setLayout(null);
         myFrame.add(logPanel);
         myFrame.setSize(800,750);

@@ -8,11 +8,11 @@ public class Course {
     private boolean isCourseMet;
     private int numberOfSemesterCourses;
 
-
-
+    
     public String getCourseID() {
         return courseID;
     }
+
 
     @Override
     public boolean equals(Object o) {
