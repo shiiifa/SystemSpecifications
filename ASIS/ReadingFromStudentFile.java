@@ -14,11 +14,6 @@ public class ReadingFromStudentFile {
 
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             // Read values from the file
-//            String year = reader.readLine();
-//            String id = reader.readLine();
-//            String cgpa = reader.readLine();
-//            String major = reader.readLine();
-//            String grade = reader.readLine();
 
             while(reader.readLine() != null){
                 String y = reader.readLine();
@@ -42,6 +37,9 @@ public class ReadingFromStudentFile {
         } catch (NumberFormatException e) {
             System.err.println("Invalid number format: " + e.getMessage());
         }
+    }
+    public List<StudentCredentials> getListOfStudents(){
+        return listOfStudents;
     }
 
 }
