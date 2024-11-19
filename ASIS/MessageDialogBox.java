@@ -8,14 +8,21 @@ public class MessageDialogBox {
     // with a message on whether the student's course
     // selection should be approved by the manufacturer or not.
     // The logic statement generated should show the manufacturer whether to click "approve" or "disapprove"
+    private StudentCredentials credentials;
 
-    public MessageDialogBox(){
+    public MessageDialogBox(StudentCredentials s){
+        this.credentials = s;
         GUI messageFrame = new GUI();
 
         JPanel messagePanel = new JPanel();
         messagePanel.setBackground(Color.white);
         messagePanel.setBounds(25, 100,750,600);
         messagePanel.setLayout(null);
+
+        JLabel studentInfo = new JLabel();
+        studentInfo.setText(s.getMajor());
+        studentInfo.setBounds(30,10,200,35);
+        messagePanel.add(studentInfo);
 
         JButton approveButton = new JButton("APPROVE");
         approveButton.setForeground(Color.white);
