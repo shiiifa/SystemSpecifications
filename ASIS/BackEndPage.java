@@ -83,7 +83,7 @@ public class BackEndPage implements ActionListener {
 
     }
 
-    //if Year one is picked, it displays the list of courses under year 1
+    //if Year one is picked, it displays the list of students who are applying for courses in year 1
     public void courseYear1(String selectedItem){
         courseBasedSelection(1);
         List<String> year1Std = new ArrayList<>();
@@ -127,83 +127,122 @@ public class BackEndPage implements ActionListener {
 
     //If year 2 is picked
     public void courseYear2(String selectedItem){
-        backFrame.dispose();
-        BackEndPage listStudents = new BackEndPage();
+        courseBasedSelection(2);
+        List<String> year2Std = new ArrayList<>();
+        Map<String, StudentCredentials> year2Selections = getMap();
+        List<StudentCredentials> studentCredentialsList = getDropdownList();
 
-        JPanel newPanel =listStudents.getPanel();
+        if(year2Selections!=null){
+            backFrame.dispose();
+            BackEndPage listStudents = new BackEndPage();
 
-        java.util.List<String> year2Courses = new CourseSelectionPanel().getYear2Courses();
-        JComboBox<String> coursesMenu = new JComboBox<>(year2Courses.toArray(new String[0]));
-        coursesMenu.setBounds(100,80,400,35);
-        newPanel.add(coursesMenu);
+            JPanel newPanel =listStudents.getPanel();
 
-        coursesMenu.addActionListener(c-> {
-            String selectedCourse = (String) coursesMenu.getSelectedItem();
-            //studentBasedCourse(selectedItem);
-            //new MessageDialogBox();
-            //System.out.println("You selected: " + selectedItem);
-        });
+            for(Map.Entry<String, StudentCredentials> e: map.entrySet()){
+                year2Std.add("Student " + e.getKey());
+            }
 
-        JLabel courseSelected = new JLabel();
-        courseSelected.setText("Selected: "+selectedItem);
-        courseSelected.setBounds(80,50,200, 35);
-        courseSelected.setFont(new Font("MV Boli", Font.ITALIC, 18));
+            java.util.List<String> year2Courses = year2Std;
+            JComboBox<String> coursesMenu = new JComboBox<>(year2Courses.toArray(new String[0]));
+            coursesMenu.setBounds(100,80,400,35);
+            newPanel.add(coursesMenu);
 
-        newPanel.add(courseSelected);
+            coursesMenu.addActionListener(c-> {
+                String selectedCourse = (String) coursesMenu.getSelectedItem();
+                for(StudentCredentials student: studentCredentialsList){
+                    new MessageDialogBox(student);
+                }
+
+                System.out.println("You selected: " + selectedItem);
+            });
+
+            JLabel courseSelected = new JLabel();
+            courseSelected.setText("Selected: "+selectedItem);
+            courseSelected.setBounds(80,50,200, 35);
+            courseSelected.setFont(new Font("MV Boli", Font.ITALIC, 18));
+
+            newPanel.add(courseSelected);
+        }
     }
 
     //If year 3 is picked:
     public void courseYear3(String selectedItem){
-        backFrame.dispose();
-        BackEndPage listStudents = new BackEndPage();
+        courseBasedSelection(3);
+        List<String> year3Std = new ArrayList<>();
+        Map<String, StudentCredentials> year3Selections = getMap();
+        List<StudentCredentials> studentCredentialsList = getDropdownList();
 
-        JPanel newPanel =listStudents.getPanel();
+        if(year3Selections!=null){
+            backFrame.dispose();
+            BackEndPage listStudents = new BackEndPage();
 
-        java.util.List<String> year3Courses = new CourseSelectionPanel().getYear3Courses();
-        JComboBox<String> coursesMenu = new JComboBox<>(year3Courses.toArray(new String[0]));
-        coursesMenu.setBounds(100,80,400,35);
-        newPanel.add(coursesMenu);
+            JPanel newPanel =listStudents.getPanel();
 
-        coursesMenu.addActionListener(c-> {
-            String selectedCourse = (String) coursesMenu.getSelectedItem();
-            //studentBasedCourse(selectedItem);
-            //new MessageDialogBox();
-            //System.out.println("You selected: " + selectedItem);
-        });
+            for(Map.Entry<String, StudentCredentials> e: map.entrySet()){
+                year3Std.add("Student " + e.getKey());
+            }
 
-        JLabel courseSelected = new JLabel();
-        courseSelected.setText("Selected: "+selectedItem);
-        courseSelected.setBounds(80,50,200, 35);
-        courseSelected.setFont(new Font("MV Boli", Font.ITALIC, 18));
+            java.util.List<String> year3Courses = year3Std;
+            JComboBox<String> coursesMenu = new JComboBox<>(year3Courses.toArray(new String[0]));
+            coursesMenu.setBounds(100,80,400,35);
+            newPanel.add(coursesMenu);
 
-        newPanel.add(courseSelected);
+            coursesMenu.addActionListener(c-> {
+                String selectedCourse = (String) coursesMenu.getSelectedItem();
+                for(StudentCredentials student: studentCredentialsList){
+                    new MessageDialogBox(student);
+                }
+
+                System.out.println("You selected: " + selectedItem);
+            });
+
+            JLabel courseSelected = new JLabel();
+            courseSelected.setText("Selected: "+selectedItem);
+            courseSelected.setBounds(80,50,200, 35);
+            courseSelected.setFont(new Font("MV Boli", Font.ITALIC, 18));
+
+            newPanel.add(courseSelected);
+        }
     }
 
     //If year 4 is picked:
     public void courseYear4(String selectedItem){
-        backFrame.dispose();
-        BackEndPage listStudents = new BackEndPage();
+        courseBasedSelection(4);
+        List<String> year4Std = new ArrayList<>();
+        Map<String, StudentCredentials> year4Selections = getMap();
+        List<StudentCredentials> studentCredentialsList = getDropdownList();
 
-        JPanel newPanel =listStudents.getPanel();
+        if(year4Selections!=null){
+            backFrame.dispose();
+            BackEndPage listStudents = new BackEndPage();
 
-        java.util.List<String> year4Courses = new CourseSelectionPanel().getYear4Courses();
-        JComboBox<String> coursesMenu = new JComboBox<>(year4Courses.toArray(new String[0]));
-        coursesMenu.setBounds(100,80,400,35);
-        newPanel.add(coursesMenu);
+            JPanel newPanel =listStudents.getPanel();
 
-        coursesMenu.addActionListener(c-> {
-            String selectedCourse = (String) coursesMenu.getSelectedItem();
-            //studentBasedCourse(selectedItem);
-            //new MessageDialogBox();
-            //System.out.println("You selected: " + selectedItem);
-        });
+            for(Map.Entry<String, StudentCredentials> e: map.entrySet()){
+                year4Std.add("Student " + e.getKey());
+            }
 
-        JLabel courseSelected = new JLabel();
-        courseSelected.setText("Selected: "+selectedItem);
-        courseSelected.setBounds(80,50,200, 35);
-        courseSelected.setFont(new Font("MV Boli", Font.ITALIC, 18));
+            java.util.List<String> year4Courses = year4Std;
+            JComboBox<String> coursesMenu = new JComboBox<>(year4Courses.toArray(new String[0]));
+            coursesMenu.setBounds(100,80,400,35);
+            newPanel.add(coursesMenu);
 
-        newPanel.add(courseSelected);
+            coursesMenu.addActionListener(c-> {
+                String selectedCourse = (String) coursesMenu.getSelectedItem();
+                for(StudentCredentials student: studentCredentialsList){
+                    new MessageDialogBox(student);
+                }
+
+                System.out.println("You selected: " + selectedItem);
+            });
+
+            JLabel courseSelected = new JLabel();
+            courseSelected.setText("Selected: "+selectedItem);
+            courseSelected.setBounds(80,50,200, 35);
+            courseSelected.setFont(new Font("MV Boli", Font.ITALIC, 18));
+
+            newPanel.add(courseSelected);
+        }
     }
 
     //If additional courses is picked:
