@@ -59,7 +59,7 @@ public class NextPage implements ActionListener {
         JLabel gpa = new JLabel();
         gpa.setText("CGPA: ");
         gpa.setForeground(Color.BLACK);
-        gpa.setFont(new Font("MV Boli", Font.PLAIN,12));
+        gpa.setFont(new Font("Georgia bold", Font.PLAIN,12));
         gpa.setBounds(15,150,150,35);
         newPanel.add(gpa);
 
@@ -83,7 +83,7 @@ public class NextPage implements ActionListener {
 
         //Student's grade
         JLabel grade = new JLabel();
-        grade.setText("Grade Obtained in Prerequisite Course (A/B/C/D/E): ");
+        grade.setText("Grade Obtained in Prerequisite Course (A/B/C/D/E/F): ");
         grade.setForeground(Color.BLACK);
         grade.setFont(new Font("Georgia bold", Font.PLAIN,12));
         grade.setBounds(15,290,400,35);
@@ -134,7 +134,7 @@ public class NextPage implements ActionListener {
             String major = majorInput.getText();
             String grade = gradeInput.getText();
 
-            if(iDInput.getText().length()<8 || grade.length()>1 || cgpa>4.0 || year>4 || major.length()<2){
+            if(iDInput.getText().length()<8 || grade.length()>1 || cgpa>4.0 || cgpa<1.0 || year>4 || major.length()<2 || !grade.matches("[A-F]")){
                 newFrame.dispose();
                 NextPage errorPage = new NextPage();
 
@@ -232,26 +232,6 @@ public class NextPage implements ActionListener {
                 newPanel.repaint();
             }
 
-//            else if(year == 5){
-//                List<String> additionalCourses = new CourseSelectionPanel().getAdditionalCourses();
-//
-//                JComboBox<String> coursesMenu = new JComboBox<>(additionalCourses.toArray(new String[0]));
-//                coursesMenu.setBounds(5,430,400,30);
-//                newPanel.add(coursesMenu);
-//
-//                coursesMenu.addActionListener(course-> {
-//                    String selectedItem = (String) coursesMenu.getSelectedItem();
-//                    System.out.println("You selected: " + selectedItem);
-//
-//                    new WritingCourseSelection(iDInput.getText(),selectedItem);
-//
-//                    new BackEndPage();
-//                    newFrame.dispose();
-//                });
-//
-//                newPanel.revalidate();
-//                newPanel.repaint();
-//            }
 
             new WritingToStudentFile(yearInput.getText(),iDInput.getText(),gpaInput.getText(),majorInput.getText(),gradeInput.getText());
 
