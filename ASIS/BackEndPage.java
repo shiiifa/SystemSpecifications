@@ -29,7 +29,7 @@ public class BackEndPage implements ActionListener {
         course.setBounds(15, 10, 200, 35);
         backPanel.add(course);
 
-        java.util.List<String> coursesBasedOnYear = List.of("Year 1", "Year 2", "Year 3", "Year 4", "Additional courses");
+        java.util.List<String> coursesBasedOnYear = List.of("Year 1", "Year 2", "Year 3", "Year 4");
 
         JComboBox<String> yearMenu = new JComboBox<>(coursesBasedOnYear.toArray(new String[0]));
         yearMenu.setBounds(100,10,400,35);
@@ -57,10 +57,6 @@ public class BackEndPage implements ActionListener {
                 System.out.println("You selected: " + selectedItem);
             }
 
-            else if(selectedItem.equals("Additional courses")){
-                courseAdditional(selectedItem);
-                System.out.println("You selected: " + selectedItem);
-            }
 
 
 
@@ -243,33 +239,6 @@ public class BackEndPage implements ActionListener {
 
             newPanel.add(courseSelected);
         }
-    }
-
-    //If additional courses is picked:
-    public void courseAdditional(String selectedItem){
-        backFrame.dispose();
-        BackEndPage listStudents = new BackEndPage();
-
-        JPanel newPanel =listStudents.getPanel();
-
-        java.util.List<String> additional = new CourseSelectionPanel().getAdditionalCourses();
-        JComboBox<String> coursesMenu = new JComboBox<>(additional.toArray(new String[0]));
-        coursesMenu.setBounds(100,80,400,35);
-        newPanel.add(coursesMenu);
-
-        coursesMenu.addActionListener(c-> {
-            String selectedCourse = (String) coursesMenu.getSelectedItem();
-            //studentBasedCourse(selectedItem);
-            //new MessageDialogBox();
-            //System.out.println("You selected: " + selectedItem);
-        });
-
-        JLabel courseSelected = new JLabel();
-        courseSelected.setText("Selected: "+selectedItem);
-        courseSelected.setBounds(80,50,400, 35);
-        courseSelected.setFont(new Font("MV Boli", Font.ITALIC, 18));
-
-        newPanel.add(courseSelected);
     }
 
 

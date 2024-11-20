@@ -10,6 +10,7 @@ public class MessageDialogBox implements ActionListener {
     // with a message on whether the student's course
     // selection should be approved by the manufacturer or not.
     // The logic statement generated should show the manufacturer whether to click "approve" or "disapprove"
+
     private final StudentCredentials credentials;
     private final JButton approveButton;
     private final JButton disapproveButton;

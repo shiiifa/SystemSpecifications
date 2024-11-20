@@ -7,8 +7,6 @@ public class CourseSelectionPanel {
     ArrayList<String>year2Courses= new ArrayList<>();
     ArrayList<String>year3Courses= new ArrayList<>();
     ArrayList<String>year4Courses= new ArrayList<>();
-    ArrayList<String>additionalCourses= new ArrayList<>();
-
 
     public ArrayList<String> getYear1Courses() {
         return year1Courses;
@@ -43,13 +41,6 @@ public class CourseSelectionPanel {
         this.year4Courses = year4Courses;
     }
 
-    public ArrayList<String> getAdditionalCourses() {
-        return additionalCourses;
-    }
-
-    public void setAdditionalCourses(ArrayList<String> additionalCourses) {
-        this.additionalCourses = additionalCourses;
-    }
 
     public CourseSelectionPanel(){
         year1Courses.add("ENGR112: Introduction to Engineering");
@@ -126,12 +117,5 @@ public class CourseSelectionPanel {
         year4Courses.add("BUSA002: Project Management and Professional Practice");
         year4Courses.add("SOAN000: African Studies Elective");
         year4Courses.add("CSOOO: Applied Project");
-
-
-        additionalCourses.add("Professional French 1 ");
-        additionalCourses.add("Professional French 2");
-        additionalCourses.add("Introductory French 1");
-        additionalCourses.add("Introductory French 2");
-
     }
 }
