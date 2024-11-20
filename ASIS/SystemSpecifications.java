@@ -17,40 +17,41 @@ public class SystemSpecifications {
         // Check if the ID is valid (last 4 digits determine year)
         boolean isValidID = isValidStudentID(studentID);
         boolean isValidYear = isValidYear(year);
-        boolean isValidGrade = isValidGrade(grade);
+        boolean isAboveGradeThreshold = isGradeAboveThreshold(grade);
 
         // Initialize variables
         String logicalExpression = "";
         String fullSentence = englishSentence;
 
-        // Define atomic propositions
-        String p = "p: This student does Computer Engineering.";
-        String q = "q: This student is in year " + year + ".";
-        String r = "r: This student has a grade of " + grade + ".";
+        // Define atomic propositions dynamically
+        char[] alphabet = "abcdefghijklmnopqrstuvwxyz".toCharArray();
+        int propositionIndex = 0;
+        String idProposition = alphabet[propositionIndex++] + ": Valid student ID.";
+        String yearProposition = alphabet[propositionIndex++] + ": Valid year.";
+        String gradeProposition = alphabet[propositionIndex++] + ": Grade is above threshold (C).";
 
-        // Check the validity of inputs and construct the logical expression
-        if (isValidID && isValidYear && isValidGrade) {
-            if (grade.equals("A") || grade.equals("B") || grade.equals("C")) {
-                logicalExpression = "p ∧ q ∧ r → a";  // approve
-                fullSentence += "APPROVED.";
-            } else if (grade.equals("D") || grade.equals("E")) {
-                logicalExpression = "p ∧ q ∧ ¬r → d";  // disapprove
-                fullSentence += "DISAPPROVED.";
-            }
-        } else if (!isValidID) {
-            logicalExpression = "¬p → d";  // disapprove if ID is invalid
-            fullSentence += "DISAPPROVED: Invalid student ID.";
-        } else if (!isValidYear) {
-            logicalExpression = "¬q → d";  // disapprove if year is invalid
-            fullSentence += "DISAPPROVED: Invalid year.";
-        } else if (!isValidGrade) {
-            logicalExpression = "¬r → d";  // disapprove if grade is invalid
-            fullSentence += "DISAPPROVED: Invalid grade.";
+        // Logical proposition keys
+        String idKey = String.valueOf(alphabet[propositionIndex - 3]);
+        String yearKey = String.valueOf(alphabet[propositionIndex - 2]);
+        String gradeKey = String.valueOf(alphabet[propositionIndex - 1]);
+
+        // Check conditions and construct the logical expression
+        int failureCount = 0;
+        if (!isValidID) failureCount++;
+        if (!isValidYear) failureCount++;
+        if (!isAboveGradeThreshold) failureCount++;
+
+        if (failureCount >= 2) {
+            logicalExpression = "¬" + idKey + " ∨ ¬" + yearKey + " ∨ ¬" + gradeKey + " → d";  // disapprove
+            fullSentence += "DISAPPROVED.";
+        } else {
+            logicalExpression = idKey + " ∧ " + yearKey + " ∧ " + gradeKey + " → a";  // approve
+            fullSentence += "APPROVED.";
         }
 
         // Return all required components
-        return fullSentence + "\n\nAtomic Propositions:\n" + p + "\n" + q + "\n" + r +
-                "\n\nLogical Expression: " + logicalExpression;
+        return fullSentence + "\n\nAtomic Propositions:\n" + idProposition + "\n" + yearProposition + "\n" +
+                gradeProposition + "\n\nLogical Expression: " + logicalExpression;
     }
 
     // Method to validate a student ID (based on the last 4 digits representing the year)
@@ -74,16 +75,13 @@ public class SystemSpecifications {
         }
     }
 
-    // Method to check if the student's grade is valid (A, B, C, D, E)
-    public static boolean isValidGrade(String grade) {
-        List<String> validGrades = Arrays.asList("A", "B", "C", "D", "E");
-        return validGrades.contains(grade);  // Check if grade is A, B, C, D, or E
+    // Method to check if the grade is above threshold (A, B, or C)
+    public static boolean isGradeAboveThreshold(String grade) {
+        List<String> validGrades = Arrays.asList("A", "B", "C");
+        return validGrades.contains(grade);  // Check if grade is A, B, or C
     }
 
-    // Method to validate a logical expression
     public static boolean isValidLogicExpression(String logicalExpression) {
-        // Example validation: if the logical expression is either "p ∧ q ∧ r → a" or "p ∧ q ∧ ¬r → d"
-        List<String> validExpressions = Arrays.asList("p ∧ q ∧ r → a", "p ∧ q ∧ ¬r → d", "¬p → d", "¬q → d", "¬r → d");
-        return validExpressions.contains(logicalExpression);
+        return false;
     }
 }
