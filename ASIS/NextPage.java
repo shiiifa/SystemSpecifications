@@ -141,7 +141,8 @@ public class NextPage implements ActionListener {
                 JPanel editedPanel = errorPage.getNewPanel();
                 JLabel caution = new JLabel();
                 caution.setText("* Ensure all fields are written correctly");
-                caution.setFont(new Font("Georgia bold", Font.BOLD,12));
+                caution.setFont(new Font("Georgia bold", Font.BOLD,14));
+                caution.setForeground(Color.red);
                 caution.setBounds(15,360,300,35);
 
                 editedPanel.add(caution);
