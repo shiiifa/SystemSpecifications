@@ -9,11 +9,11 @@ public class SystemSpecifications {
     public static String generateEnglishSentence(String studentID, String year, String major, String grade) {
         // Build the English sentence based on the student's input
         return "If the student with ID " + studentID + " is in year " + year + ", studying " + major +
-                ", and has a grade of " + grade + " in their prerequisite course, then ";
+                ", and has a grade of " + grade + " in their prerequisite course, then let the course be ";
     }
 
     // Method to parse an English sentence into a logical expression and display results
-    public static String parseEnglishToLogic(String englishSentence, String studentID, String year, String grade) {
+    public static String parseEnglishToLogic(String username, String imageStatus, String studentID, String year, String major, String grade) {
         // Check if the ID is valid (last 4 digits determine year)
         boolean isValidID = isValidStudentID(studentID);
         boolean isValidYear = isValidYear(year);
@@ -21,14 +21,14 @@ public class SystemSpecifications {
 
         // Initialize variables
         String logicalExpression = "";
-        String fullSentence = englishSentence;
+        String fullSentence = generateEnglishSentence(studentID, year, major, grade);
 
         // Define atomic propositions dynamically
-        char[] alphabet = "abcdefghijklmnopqrstuvwxyz".toCharArray();
+        char[] alphabet = "pqrstuvwxyz".toCharArray();
         int propositionIndex = 0;
-        String idProposition = alphabet[propositionIndex++] + ": Valid student ID.";
-        String yearProposition = alphabet[propositionIndex++] + ": Valid year.";
-        String gradeProposition = alphabet[propositionIndex++] + ": Grade is above threshold (C).";
+        String idProposition = alphabet[propositionIndex++] + ": This user has a valid student ID.";
+        String yearProposition = alphabet[propositionIndex++] + ": This user's year group is valid.";
+        String gradeProposition = alphabet[propositionIndex++] + ": This user's grade is above threshold (C).";
 
         // Logical proposition keys
         String idKey = String.valueOf(alphabet[propositionIndex - 3]);
@@ -49,9 +49,12 @@ public class SystemSpecifications {
             fullSentence += "APPROVED.";
         }
 
-        // Return all required components
-        return fullSentence + "\n\nAtomic Propositions:\n" + idProposition + "\n" + yearProposition + "\n" +
-                gradeProposition + "\n\nLogical Expression: " + logicalExpression;
+        // Return the full output as a formatted string
+        return "Username: " + username + "\n" +
+                "Image: " + imageStatus + "\n\n" +
+                "Atomic Propositions:\n" + idProposition + "\n" + yearProposition + "\n" +
+                gradeProposition + "\n\nGenerated Sentence: " + fullSentence + "\n\n" +
+                "Logical Expression: " + logicalExpression;
     }
 
     // Method to validate a student ID (based on the last 4 digits representing the year)
@@ -59,7 +62,7 @@ public class SystemSpecifications {
         try {
             int id = Integer.parseInt(studentID);
             int year = id % 10000;  // Last 4 digits represent the year (e.g., 2027 -> Year 2)
-            return (year >= 1 && year <= 4);
+            return (year >= 2025 && year <= 2028);  // Valid years: 2025, 2026, 2027, 2028
         } catch (NumberFormatException e) {
             return false;  // Invalid ID format
         }

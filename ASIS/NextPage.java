@@ -8,16 +8,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NextPage implements ActionListener {
-    JButton backButton;
-    GUI newFrame;
-    JButton doneButton;
-    JTextField yearInput;
-    JTextField iDInput;
-    JTextField gpaInput;
-    JTextField majorInput;
-    JTextField gradeInput;
+    private final JButton backButton;
+    private final JButton doneButton;
+    private final JTextField yearInput;
+    private final JTextField iDInput;
+    private final JTextField gpaInput;
+    private final JTextField majorInput;
+    private final JTextField gradeInput;
     private final JPanel newPanel;
     private final List<CourseSelectionSystem> saveCourse;
+    private final GUI newFrame;
 
     public NextPage() {
         newFrame = new GUI();
@@ -55,7 +55,7 @@ public class NextPage implements ActionListener {
         // Student's GPA
         JLabel gpa = new JLabel("CGPA: ");
         gpa.setForeground(Color.BLACK);
-        gpa.setFont(new Font("MV Boli", Font.PLAIN, 12));
+        gpa.setFont(new Font("Georgia bold", Font.PLAIN, 12));
         gpa.setBounds(15, 150, 150, 35);
         newPanel.add(gpa);
 
@@ -96,7 +96,7 @@ public class NextPage implements ActionListener {
         JLabel courses = new JLabel("Select Course from List: ");
         courses.setForeground(Color.BLACK);
         courses.setFont(new Font("Georgia bold", Font.PLAIN, 12));
-        courses.setBounds(15, 410, 150, 35);
+        courses.setBounds(15, 410, 200, 35);
         newPanel.add(courses);
 
         backButton = new JButton("Back");
@@ -124,58 +124,53 @@ public class NextPage implements ActionListener {
                 int id = Integer.parseInt(iDInput.getText());
                 double cgpa = Double.parseDouble(gpaInput.getText());
                 String major = majorInput.getText();
-                String grade = gradeInput.getText();
+                String grade = gradeInput.getText().toUpperCase();
 
                 // Validate fields
-                if (iDInput.getText().length() < 8 || grade.length() > 1 || cgpa > 4.0 || year > 4 || major.length() < 2) {
-                    showError("Ensure all fields are written correctly.");
+                if (String.valueOf(id).length() != 8 || grade.length() != 1 || cgpa > 4.0 || year < 1 || year > 4 || major.isEmpty()) {
+                    showError("Ensure all fields are correctly filled.");
                 } else {
                     // Generate English sentence and logical expression
-                    String englishSentence = SystemSpecifications.generateEnglishSentence(iDInput.getText(), String.valueOf(year), major, grade);
-                    System.out.println("Generated Sentence: " + englishSentence);
+                    String englishSentence = SystemSpecifications.generateEnglishSentence(String.valueOf(id), String.valueOf(year), major, grade);
+                    String logicalExpression = SystemSpecifications.parseEnglishToLogic(englishSentence, String.valueOf(id), String.valueOf(year), major, grade, String.valueOf(cgpa));
 
-                    String logicalExpression = SystemSpecifications.parseEnglishToLogic(iDInput.getText(), String.valueOf(year), major, grade);
+                    // Display results
+                    System.out.println("Generated Sentence: " + englishSentence);
                     System.out.println("Logical Expression: " + logicalExpression);
 
                     boolean isValid = SystemSpecifications.isValidLogicExpression(logicalExpression);
                     System.out.println("Is the logical expression valid? " + isValid);
 
-                    // Handle course selection for the given year
+                    // Handle course selection
                     handleCourseSelection(year);
 
                     // Write to student file
-                    new WritingToStudentFile(yearInput.getText(), iDInput.getText(), gpaInput.getText(), majorInput.getText(), gradeInput.getText());
+                    new WritingToStudentFile(String.valueOf(year), String.valueOf(id), String.valueOf(cgpa), major, grade);
                 }
             } catch (NumberFormatException ex) {
-                showError("Invalid input detected. Please enter correct values.");
+                showError("Invalid input detected. Please ensure all fields are filled correctly.");
             }
         }
     }
 
     private void showError(String message) {
-        newFrame.dispose();
-        NextPage errorPage = new NextPage();
-        JPanel editedPanel = errorPage.getNewPanel();
-        JLabel caution = new JLabel(message);
-        caution.setFont(new Font("Georgia bold", Font.BOLD, 12));
-        caution.setBounds(15, 360, 300, 35);
-        editedPanel.add(caution);
+        JOptionPane.showMessageDialog(newFrame, message, "Error", JOptionPane.ERROR_MESSAGE);
     }
 
     private void handleCourseSelection(int year) {
         if (year == 1) {
-            List<String> year1 = new CourseSelectionPanel().getYear1Courses();
+            List<String> year1Courses = new CourseSelectionPanel().getYear1Courses();
 
-            JComboBox<String> coursesMenu = new JComboBox<>(year1.toArray(new String[0]));
-            coursesMenu.setBounds(5, 430, 400, 30);
+            JComboBox<String> coursesMenu = new JComboBox<>(year1Courses.toArray(new String[0]));
+            coursesMenu.setBounds(5, 450, 400, 30);
             newPanel.add(coursesMenu);
 
             coursesMenu.addActionListener(course -> {
                 String selectedItem = (String) coursesMenu.getSelectedItem();
                 System.out.println("You selected: " + selectedItem);
                 new WritingCourseSelection(iDInput.getText(), selectedItem);
-                new BackEndPage();
                 newFrame.dispose();
+                new BackEndPage();
             });
 
             newPanel.revalidate();
