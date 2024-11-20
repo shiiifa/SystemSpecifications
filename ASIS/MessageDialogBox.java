@@ -2,13 +2,18 @@ package ASIS;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class MessageDialogBox {
+public class MessageDialogBox implements ActionListener {
     //This class will contain code that displays a dialog box
     // with a message on whether the student's course
     // selection should be approved by the manufacturer or not.
     // The logic statement generated should show the manufacturer whether to click "approve" or "disapprove"
-    private StudentCredentials credentials;
+    private final StudentCredentials credentials;
+    private final JButton approveButton;
+    private final JButton disapproveButton;
+
 
     public MessageDialogBox(StudentCredentials s){
         this.credentials = s;
@@ -24,26 +29,41 @@ public class MessageDialogBox {
         studentInfo.setBounds(30,10,200,35);
         messagePanel.add(studentInfo);
 
-        JButton approveButton = new JButton("APPROVE");
+
+
+        approveButton = new JButton("APPROVE");
         approveButton.setForeground(Color.white);
         approveButton.setBackground(new Color(80,200,120)); //emerald green
         approveButton.setOpaque(true);
         approveButton.setBorderPainted(false);
-        //doneButton.addActionListener(this);
+        approveButton.addActionListener(this);
         approveButton.setBounds(15,450,200,100);
         messagePanel.add(approveButton);
 
-        JButton disapproveButton = new JButton("DISAPPROVE");
+        disapproveButton = new JButton("DISAPPROVE");
         disapproveButton.setForeground(Color.white);
         disapproveButton.setBackground(new Color(210,4,45)); //cherry
         disapproveButton.setOpaque(true);
         disapproveButton.setBorderPainted(false);
-        //doneButton.addActionListener(this);
+        disapproveButton.addActionListener(this);
         disapproveButton.setBounds(535,450,200,100);
         messagePanel.add(disapproveButton);
 
         messageFrame.setLayout(null);
         messageFrame.add(messagePanel);
         messageFrame.setSize(800,750);
+    }
+
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource()==approveButton){
+            new enrolmentStatus("Enrolment Successfully Approved");
+
+        }
+
+        else if(e.getSource()==disapproveButton){
+            new enrolmentStatus("Failed to enrol in this course");
+        }
     }
 }
