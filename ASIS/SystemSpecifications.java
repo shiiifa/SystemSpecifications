@@ -1,9 +1,15 @@
+
 package ASIS;
 
 import java.util.Arrays;
 import java.util.List;
 
 public class SystemSpecifications {
+    private static String logicalExpression;
+    private static String fullSentence;
+    private static String gradeProposition;
+    private static String idProposition;
+    private static String yearProposition;
 
     // Method to generate an English sentence based on student's data
     public static String generateEnglishSentence(String studentID, String year, String major, String grade) {
@@ -20,15 +26,15 @@ public class SystemSpecifications {
         boolean isAboveGradeThreshold = isGradeAboveThreshold(grade);
 
         // Initialize variables
-        String logicalExpression = "";
-        String fullSentence = generateEnglishSentence(studentID, year, major, grade);
+        logicalExpression = "";
+        fullSentence = generateEnglishSentence(studentID, year, major, grade);
 
         // Define atomic propositions dynamically
         char[] alphabet = "pqrstuvwxyz".toCharArray();
         int propositionIndex = 0;
-        String idProposition = alphabet[propositionIndex++] + ": This user has a valid student ID.";
-        String yearProposition = alphabet[propositionIndex++] + ": This user's year group is valid.";
-        String gradeProposition = alphabet[propositionIndex++] + ": This user's grade is above threshold (C).";
+        idProposition = alphabet[propositionIndex++] + ": This user has a valid student ID.";
+        yearProposition = alphabet[propositionIndex++] + ": This user's year group is valid.";
+        gradeProposition = alphabet[propositionIndex++] + ": This user's grade is above threshold (C).";
 
         // Logical proposition keys
         String idKey = String.valueOf(alphabet[propositionIndex - 3]);
@@ -41,7 +47,6 @@ public class SystemSpecifications {
         if (!isValidYear) failureCount++;
         if (!isAboveGradeThreshold) failureCount++;
 
-        // Construct the logical expression based on failure count
         if (failureCount >= 2) {
             logicalExpression = "¬" + idKey + " ∨ ¬" + yearKey + " ∨ ¬" + gradeKey + " → d";  // disapprove
             fullSentence += "DISAPPROVED.";
@@ -51,11 +56,12 @@ public class SystemSpecifications {
         }
 
         // Return the full output as a formatted string
-        return "Username: " + username + "\n" +
-                "Image: " + imageStatus + "\n\n" +
+        return //"Username: " + username + "\n" +
+                //"Image: " + imageStatus + "\n\n" +
                 "Atomic Propositions:\n" + idProposition + "\n" + yearProposition + "\n" +
-                gradeProposition + "\n\nGenerated Sentence: " + fullSentence + "\n\n" +
-                "Logical Expression: " + logicalExpression;
+                gradeProposition;
+                        //+ "\n\nGenerated Sentence: " + fullSentence + "\n\n" +
+               // "Logical Expression: " + logicalExpression;
     }
 
     // Method to validate a student ID (based on the last 4 digits representing the year)
@@ -68,7 +74,6 @@ public class SystemSpecifications {
             return false;  // Invalid ID format
         }
     }
-
 
     // Method to check if the student's year is valid (1-4)
     public static boolean isValidYear(String year) {
@@ -86,9 +91,20 @@ public class SystemSpecifications {
         return validGrades.contains(grade);  // Check if grade is A, B, or C
     }
 
-    // Method to validate a logical expression (as needed)
     public static boolean isValidLogicExpression(String logicalExpression) {
-        // Placeholder: Implement proper validation if required
         return false;
+    }
+
+    public static String getFullSentence() {
+        return fullSentence;
+    }
+
+    public static String getLogicalExpression() {
+        return logicalExpression;
+    }
+
+    public static String getAtomicP(){
+        return "<html>" +idProposition + "\n" + yearProposition + "\n" +
+                gradeProposition + "</html>";
     }
 }
