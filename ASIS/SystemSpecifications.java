@@ -41,6 +41,7 @@ public class SystemSpecifications {
         if (!isValidYear) failureCount++;
         if (!isAboveGradeThreshold) failureCount++;
 
+        // Construct the logical expression based on failure count
         if (failureCount >= 2) {
             logicalExpression = "¬" + idKey + " ∨ ¬" + yearKey + " ∨ ¬" + gradeKey + " → d";  // disapprove
             fullSentence += "DISAPPROVED.";
@@ -68,6 +69,7 @@ public class SystemSpecifications {
         }
     }
 
+
     // Method to check if the student's year is valid (1-4)
     public static boolean isValidYear(String year) {
         try {
@@ -84,7 +86,9 @@ public class SystemSpecifications {
         return validGrades.contains(grade);  // Check if grade is A, B, or C
     }
 
+    // Method to validate a logical expression (as needed)
     public static boolean isValidLogicExpression(String logicalExpression) {
+        // Placeholder: Implement proper validation if required
         return false;
     }
 }
